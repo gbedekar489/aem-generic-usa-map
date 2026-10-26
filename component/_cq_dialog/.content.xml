@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Interactive USA Data Map"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <!-- GENERAL SETTINGS -->
+
+                    <general
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <mapTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Map Title"
+                                fieldDescription="Heading displayed above the map."
+                                name="./mapTitle"
+                                emptyText="USA Data Map"/>
+
+                            <metricLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Metric Label"
+                                fieldDescription="Description of the value represented by each state."
+                                name="./metricLabel"
+                                emptyText="Submissions"/>
+
+                            <showStatistics
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                text="Show Summary Statistics"
+                                name="./showStatistics"
+                                value="true"
+                                uncheckedValue="false"
+                                checked="{Boolean}true"/>
+
+                        </items>
+                    </general>
+
+                    <!-- DATA SOURCE -->
+
+                    <dataSource
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Data Source"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <sourceType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Data Source Type"
+                                name="./sourceType">
+
+                                <items jcr:primaryType="nt:unstructured">
+
+                                    <rest
+                                        jcr:primaryType="nt:unstructured"
+                                        text="REST API"
+                                        value="rest"
+                                        selected="{Boolean}true"/>
+
+                                    <sling
+                                        jcr:primaryType="nt:unstructured"
+                                        text="AEM Sling Servlet / Model"
+                                        value="sling"/>
+
+                                    <static
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Static JSON"
+                                        value="static"/>
+
+                                </items>
+                            </sourceType>
+
+                            <dataEndpoint
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Data Endpoint"
+                                fieldDescription="Same-origin URL that returns state data in JSON format."
+                                name="./dataEndpoint"
+                                emptyText="https://api.example.com/states"/>
+
+                            <stateField
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="State Field"
+                                fieldDescription="JSON property containing the two-letter state code."
+                                name="./stateField"
+                                emptyText="state"/>
+
+                            <valueField
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Value Field"
+                                fieldDescription="JSON property containing the numeric value."
+                                name="./valueField"
+                                emptyText="count"/>
+
+                        </items>
+                    </dataSource>
+
+                    <!-- MAP INTERACTION -->
+
+                    <interaction
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Interaction"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+                            
+                            
+                            <showTooltips
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                text="Show State Tooltips"
+                                name="./showTooltips"
+                                value="true"
+                                uncheckedValue="false"
+                                checked="{Boolean}true"/>
+
+                        </items>
+                    </interaction>
+                    
+
+                </items>
+            </tabs>
+
+        </items>
+    </content>
+</jcr:root>

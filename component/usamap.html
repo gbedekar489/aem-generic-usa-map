@@ -1,0 +1,52 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.css @ categories='generic.usamap'}"/>
+
+<section class="usa-forms-dashboard"
+         data-counts-url="${properties.dataEndpoint || '' @ context='attribute'}"
+         data-source-type="${properties.sourceType || 'rest' @ context='attribute'}"
+         data-state-field="${properties.stateField || 'state' @ context='attribute'}"
+         data-value-field="${properties.valueField || 'count' @ context='attribute'}"
+         data-metric-label="${properties.metricLabel || 'Submissions' @ context='attribute'}"
+         data-show-statistics="${properties.showStatistics == 'false' ? 'false' : 'true' @ context='attribute'}"
+         data-show-tooltips="${properties.showTooltips == 'false' ? 'false' : 'true' @ context='attribute'}">
+
+    <h2>${properties.mapTitle || 'USA Form Submissions' @ context='text'}</h2>
+
+    <div class="usa-dashboard-stats"
+         data-sly-test="${properties.showStatistics != 'false'}">
+
+        <div>
+            <strong data-stat="total">--</strong>
+            <span>Total ${properties.metricLabel || 'Submissions' @ context='text'}</span>
+        </div>
+
+        <div>
+            <strong data-stat="states">--</strong>
+            <span>States Represented</span>
+        </div>
+
+        <div>
+            <strong data-stat="top">--</strong>
+            <span>Top State</span>
+        </div>
+
+    </div>
+
+    <div class="usa-map-container"
+         role="region"
+         aria-label="USA data by state">
+        Loading USA map...
+    </div>
+
+    <div class="usa-state-details"
+         aria-live="polite">
+        Select a state to view its data.
+    </div>
+
+    <p class="usa-map-error"
+       role="alert"
+       hidden></p>
+
+</section>
+
+<sly data-sly-call="${clientlib.js @ categories='generic.usamap'}"/>

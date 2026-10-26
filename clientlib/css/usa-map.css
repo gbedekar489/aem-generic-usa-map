@@ -1,0 +1,67 @@
+.usa-forms-dashboard {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 24px;
+}
+.usa-forms-dashboard h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+.usa-forms-dashboard .usa-dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.usa-forms-dashboard .usa-dashboard-stats > div {
+  padding: 20px;
+  background: #f5f7fa;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.usa-forms-dashboard .usa-dashboard-stats strong {
+  font-size: 32px;
+  color: #163b68;
+}
+.usa-forms-dashboard .usa-dashboard-stats span {
+  font-size: 13px;
+  color: #526071;
+}
+.usa-forms-dashboard .usa-map-container {
+  min-height: 350px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+}
+.usa-forms-dashboard .usa-map-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.usa-forms-dashboard .usa-map-container path {
+  cursor: pointer;
+}
+.usa-forms-dashboard .usa-map-container path:hover, .usa-forms-dashboard .usa-map-container path:focus {
+  opacity: 0.7;
+  stroke: #17365d;
+  stroke-width: 2px;
+  outline: none;
+}
+.usa-forms-dashboard .usa-state-details {
+  margin-top: 18px;
+  padding: 16px;
+  background: #eef4fb;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.usa-forms-dashboard .usa-map-error {
+  color: #b42318;
+  margin-top: 16px;
+}
+@media (max-width: 640px) {
+  .usa-forms-dashboard .usa-dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+}

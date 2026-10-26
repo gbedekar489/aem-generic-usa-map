@@ -1,0 +1,30 @@
+
+{
+  "totalSubmissions": 18,
+  "states": [
+    {
+      "state": "CA",
+      "count": 8
+    },
+    {
+      "state": "GA",
+      "count": 1
+    },
+    {
+      "state": "ID",
+      "count": 2
+    },
+    {
+      "state": "IN",
+      "count": 2
+    },
+    {
+      "state": "KS",
+      "count": 1
+    },
+    {
+      "state": "ME",
+      "count": 4
+    }
+  ]
+}
